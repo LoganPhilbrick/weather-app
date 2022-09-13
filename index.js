@@ -22,3 +22,4 @@ const convertKelvin = (kelvin) => {
     return (((kelvin - 273.15) * 1.8) + 32)
 }
 
+// feature
