@@ -1,46 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"
+    />
 
-
-    <link rel="stylesheet" href="app.css">
-</head>
-<body>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
     <div class="container">
-        <p class="date">September 15th in <span id="location"></span></p>
-        <div class="pillContainer">
-            <span class="material-symbols-outlined">
-                sunny
-            </span>
-            <span class="temp">75°</span>
-        </div>
+      <p id="dateTime"></p>
+      <div class="pillContainer">
+        <span class="material-symbols-outlined"> sunny </span>
+        <span id="temp"></span>
+      </div>
     </div>
     <div class="subContainer">
-        <div class="otherInfoLeft">
-            <p>Humidity</p>
-            <p>Wind</p>
-            <p>Pressure</p>
-        </div>
-        <div class="otherInfoRight">
-            <p>60%</p>
-            <p>4 mph</p>
-            <p>30.21 inHG</p>
-        </div>
+      <div class="otherInfoLeft">
+        <p>Humidity</p>
+        <p>Wind</p>
+        <p>Pressure</p>
+      </div>
+      <div class="otherInfoRight">
+        <p id="humidity"></p>
+        <p id="wind"></p>
+        <p id="pressure"></p>
+      </div>
     </div>
 
-
-
-
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
