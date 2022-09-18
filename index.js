@@ -4,9 +4,11 @@ const dateTime = document.getElementById("dateTime");
 const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const pressure = document.getElementById("pressure");
+const skyIcon = document.getElementById("skyIcon");
 
 const loader = document.getElementById("loaderBg");
 
+let weatherIcon;
 let formattedDate;
 let weatherInfo;
 
@@ -24,32 +26,64 @@ const formatDate = () => {
   switch (mm) {
     case 1:
       mm = "January";
+      break;
     case 2:
       mm = "february";
+      break;
     case 3:
       mm = "March";
+      break;
     case 4:
       mm = "April";
+      break;
     case 5:
       mm = "May";
+      break;
     case 6:
       mm = "June";
+      break;
     case 7:
       mm = "July";
+      break;
     case 8:
       mm = "August";
+      break;
     case 9:
       mm = "September";
+      break;
     case 10:
       mm = "October";
+      break;
     case 11:
       mm = "November";
+      break;
     case 12:
       mm = "December";
+      break;
   }
 
   // set string of month and day
   return (formattedDate = `${mm} ${dd}`);
+};
+
+// update weather icon
+
+const updateIcon = () => {
+  // create variable to hold API sky information
+  let i = weatherInfo.weather[0].main;
+  // switch to update i variable based on API sky information
+  switch (i) {
+    case "Clear":
+      i = "sunny";
+      break;
+    case "Rain":
+      i = "rainy";
+      break;
+    case "Clouds":
+      i = "cloudy";
+  }
+  // return and update weatherIcon with new i value
+  return (weatherIcon = i);
 };
 
 //convert kelvin to fahrenheit
@@ -68,11 +102,18 @@ const fetchWeatherData = (APIKEY, lat, long) => {
     .then(() => {
       let convertedTemp = convertKToF(weatherInfo.main.temp);
       temp.innerText = `${parseInt(convertedTemp)}°`;
-      dateTime.innerHTML = `${formattedDate} in ${weatherInfo.name}`;
+      dateTime.innerHTML = `${formattedDate}th in ${weatherInfo.name}`;
       humidity.innerHTML = `${weatherInfo.main.humidity}%`;
       wind.innerHTML = `${parseInt(weatherInfo.wind.speed)} mph`;
       pressure.innerHTML = `${weatherInfo.main.pressure} mb`;
-      loader.style.display = "none";
+      // call function to update weatherIcon
+      updateIcon();
+      // update HTML to change icon based on weather
+      skyIcon.innerHTML = weatherIcon;
+      //added buffer to load all elements before revealing page(bad idea?)
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 200);
     });
 };
 
