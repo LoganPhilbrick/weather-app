@@ -79,6 +79,8 @@ const updateIcon = () => {
     case "Rain":
       i = "rainy";
       break;
+    case "Clouds":
+      i = "cloudy";
   }
   // return and update weatherIcon with new i value
   return (weatherIcon = i);
@@ -108,7 +110,10 @@ const fetchWeatherData = (APIKEY, lat, long) => {
       updateIcon();
       // update HTML to change icon based on weather
       skyIcon.innerHTML = weatherIcon;
-      loader.style.display = "none";
+      //added buffer to load all elements before revealing page(bad idea?)
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 200);
     });
 };
 

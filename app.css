@@ -38,12 +38,12 @@ body {
     50%  { transform: translate(0, 2px); }
     100%   { transform: translate(0, -2px); }   
 }
-/* @keyframes spin {
+@keyframes spin {
     to {
         transform: rotate(360deg);
     }
 
-} */
+}
 
 .pillContainer:hover {
     box-shadow: 0 0 10px black inset;
