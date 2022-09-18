@@ -25,19 +25,25 @@ body {
     transition: 0.5s;
 }
 
-.material-symbols-outlined {
+.material-symbols-rounded {
     font-size: 50px;
-    font-weight: 400;
-    animation: spin 5s ease-in-out infinite;
+    font-weight: 100;
+    animation: floating 3s ease-in-out infinite
+    /* animation: spin 5s ease-in-out infinite; */
 
 }
 
-@keyframes spin {
+@keyframes floating {
+    0% { transform: translate(0,  -2px); }
+    50%  { transform: translate(0, 2px); }
+    100%   { transform: translate(0, -2px); }   
+}
+/* @keyframes spin {
     to {
         transform: rotate(360deg);
     }
 
-}
+} */
 
 .pillContainer:hover {
     box-shadow: 0 0 10px black inset;
@@ -121,3 +127,4 @@ body {
     z-index: 100;
 animation: spin 1.5s linear infinite;
 }
+
