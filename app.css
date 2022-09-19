@@ -1,10 +1,25 @@
 body {
-    background-color: #444;
-
+    background-image: linear-gradient(to bottom right, #222, #666);
+background-size: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
 }
 
-
+.boxContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #666;
+    width: auto;
+    height: auto;
+    border-radius: 5%;
+    
+}
 .container {
+    margin-top: 60px;
     font-family: 'roboto';
     display: flex;
     flex-direction: column;
@@ -14,7 +29,7 @@ body {
 }
 
 .pillContainer {
-    /* margin-top: 20em; */
+   
     background-color: rgba(235, 235, 235);
     width: 200px;
     height: 100px;
@@ -58,14 +73,17 @@ body {
 }
 
 #dateTime {
-    margin-top: 18rem;
     font-family: 'roboto';
     font-size: 25px;
     font-weight: 300;
     color: white;
+    text-align: center;
 }
 
 .subContainer {
+    margin-bottom: 60px;
+    margin-left: 35px;
+    margin-right: 35px;
     font-family: 'roboto';
     font-weight: 400;
     display: flex;
@@ -92,6 +110,8 @@ body {
     text-align: end;
     flex-direction: column;
     margin-left: 5em;
+     white-space: nowrap;
+  overflow: hidden;
 }
 
 .otherInfoRight p {
@@ -104,7 +124,8 @@ body {
 }
 
 #loaderBg{
-    background: #444;
+    background: rgba(68, 68, 68, 0);
+    background-repeat: repeat;
     height: 100vh; 
     width: 100%;
     position: fixed;
