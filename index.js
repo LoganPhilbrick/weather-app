@@ -5,7 +5,7 @@ const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const pressure = document.getElementById("pressure");
 const skyIcon = document.getElementById("skyIcon");
-
+const box = document.getElementById("box");
 const loader = document.getElementById("loaderBg");
 
 let weatherIcon;
@@ -106,13 +106,16 @@ const fetchWeatherData = (APIKEY, lat, long) => {
       humidity.innerHTML = `${weatherInfo.main.humidity}%`;
       wind.innerHTML = `${parseInt(weatherInfo.wind.speed)} mph`;
       pressure.innerHTML = `${weatherInfo.main.pressure} mb`;
+      // box.style.display = "none";
       // call function to update weatherIcon
       updateIcon();
       // update HTML to change icon based on weather
       skyIcon.innerHTML = weatherIcon;
-      //added buffer to load all elements before revealing page(bad idea?)
+      //hide loader once page is ready
+      loader.style.display = "none";
+      // set display to flex once page is ready
       setTimeout(() => {
-        loader.style.display = "none";
+        box.style.display = "flex";
       }, 200);
     });
 };
