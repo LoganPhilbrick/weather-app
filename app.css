@@ -57,7 +57,7 @@ animation: spin 1s linear infinite;
     height: auto;
     box-shadow: 0 20px 40px #222;
     visibility: hidden;
- 
+    
 }
 
 
@@ -73,7 +73,6 @@ animation: spin 1s linear infinite;
     text-align: center;
     padding-left: 20px;
     padding-right: 20px;
-
 }
 
 .pill{
@@ -98,7 +97,8 @@ animation: spin 1s linear infinite;
 .material-symbols-rounded {
     font-size: 50px;
     font-weight: 100;
-    animation: floating 3s ease-in-out infinite
+    transition: .5s;
+    animation: floating 3s ease-in-out infinite;
     /* animation: spin 5s ease-in-out infinite; */
 
 }
@@ -120,6 +120,7 @@ animation: spin 1s linear infinite;
     margin-left: 35px;
     margin-right: 35px;
     margin-top: 40px;
+    
 }
 
 
@@ -128,6 +129,7 @@ animation: spin 1s linear infinite;
     display: flex;
     flex-direction: column;
     text-align: start;
+  
 }
 
 .leftInfo p{
@@ -141,7 +143,7 @@ animation: spin 1s linear infinite;
     flex-direction: column;
      white-space: nowrap;
   overflow: hidden;
-    
+ 
 }
 
 .rightInfo p{
@@ -156,18 +158,7 @@ animation: spin 1s linear infinite;
         width: 90%;
         height: auto;
     }
-    .pill{
-        color: black;
-        font-size: 60px;
-        font-weight: 200;
-        background-color: #ebebeb;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50px;
-        width: 200px;
-        height: 100px;
-    }
+    
     .rightInfo p{
         margin-left: 65px;
     }
@@ -176,6 +167,27 @@ animation: spin 1s linear infinite;
     }
 }
 
+@media(max-width: 385px){
+    .pill{
+        color: black;
+        font-size: 53px;
+        font-weight: 200;
+        background-color: #ebebeb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        width: 180px;
+        height: 90px;
+        transition: .5s;
+    }
+    .material-symbols-rounded {
+        font-size: 47px;
+        transition: .5s;
+    }
+
+}
+ 
 @media(max-width: 345px){
     .rightInfo p{
         margin-left: 35px;
