@@ -1,16 +1,16 @@
 const APIKEY = "1e92dfdcded69a53ecb95b2e92c583a2";
 const temp = document.getElementById("temp");
-const dateTime = document.getElementById("dateTime");
+const dateAndTime = document.getElementById("dateAndTime");
 const humidity = document.getElementById("humidity");
 const wind = document.getElementById("wind");
 const pressure = document.getElementById("pressure");
 const skyIcon = document.getElementById("skyIcon");
-const box = document.getElementById("box");
-const loader = document.getElementById("loaderBg");
+const box = document.querySelector(".outerBox");
+const loader = document.querySelector(".loaderContainer");
 
-let weatherIcon;
 let formattedDate;
 let weatherInfo;
+let weatherIcon;
 
 // format date
 
@@ -66,7 +66,10 @@ const formatDate = () => {
   return (formattedDate = `${mm} ${dd}`);
 };
 
-// update weather icon
+//convert kelvin to fahrenheit
+const convertKToF = (kelvin) => {
+  return (kelvin - 273.15) * 1.8 + 32;
+};
 
 const updateIcon = () => {
   // create variable to hold API sky information
@@ -86,13 +89,6 @@ const updateIcon = () => {
   return (weatherIcon = i);
 };
 
-//convert kelvin to fahrenheit
-const convertKToF = (kelvin) => {
-  return (kelvin - 273.15) * 1.8 + 32;
-};
-
-// Function getting user's location info and fetching from the weather api
-
 const fetchWeatherData = (APIKEY, lat, long) => {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${APIKEY}`
@@ -102,20 +98,19 @@ const fetchWeatherData = (APIKEY, lat, long) => {
     .then(() => {
       let convertedTemp = convertKToF(weatherInfo.main.temp);
       temp.innerText = `${parseInt(convertedTemp)}°`;
-      dateTime.innerHTML = `${formattedDate}th in ${weatherInfo.name}`;
+      dateAndTime.innerHTML = `${formattedDate}th in ${weatherInfo.name}`;
       humidity.innerHTML = `${weatherInfo.main.humidity}%`;
       wind.innerHTML = `${parseInt(weatherInfo.wind.speed)} mph`;
       pressure.innerHTML = `${weatherInfo.main.pressure} mb`;
-      // box.style.display = "none";
-      // call function to update weatherIcon
+      // call to update the weather icon
       updateIcon();
-      // update HTML to change icon based on weather
+      // update innerHTML to display new icon
       skyIcon.innerHTML = weatherIcon;
-      //hide loader once page is ready
+      // hide loader
       loader.style.display = "none";
-      // set display to flex once page is ready
+      // make content visible once page is ready
       setTimeout(() => {
-        box.style.display = "flex";
+        box.style.visibility = "visible";
       }, 200);
     });
 };

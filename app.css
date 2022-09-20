@@ -1,44 +1,86 @@
-body {
-    background-image: linear-gradient(to bottom right, #222, #666);
-background-size: 100%;
-display: flex;
+body{
+    font-family: 'roboto';
+    color: white;
+    display: flex;
+    margin: 0;
+   
 justify-content: center;
 align-items: center;
 height: 100vh;
 width: auto;
 }
 
-.boxContainer{
-    display: none;
+.godContainer{
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #666;
-    width: auto;
-    height: auto;
-    border-radius: 5%;
-    
+    background-image:linear-gradient(to bottom right, #222, #666) ;
+width: 100vw;
+height: 100vh;
 }
-.container {
-    margin-top: 50px;
-    font-family: 'roboto';
+
+.loaderContainer{
+   background-color: transparent;
+    height: auto; 
+    width: auto;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+    height: 30px;
+    width: 30px;
+    border: 3px solid;
+    border-color: white transparent;
+    border-radius: 50%;
+    z-index: 100;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.outerBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-color: #666;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    visibility: hidden;
 }
 
-.pillContainer {
-   
-    background-color: rgba(235, 235, 235);
-    width: 200px;
-    height: 100px;
+
+
+#dateAndTime{
+    font-size: 25px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    margin-top:50px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.pill{
+    color: black;
+    font-size: 60px;
+    font-weight: 200;
+    background-color: #ebebeb;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    transition: 0.5s;
+    width: 200px;
+    height: 100px;
 }
 
 .material-symbols-rounded {
@@ -54,99 +96,63 @@ width: auto;
     50%  { transform: translate(0, 2px); }
     100%   { transform: translate(0, -2px); }   
 }
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-.pillContainer:hover {
-    box-shadow: 0 0 10px black inset;
-    transition: 0.5s;
-}
-
-#temp {
-    font-family: 'roboto';
-    font-size: 60px;
-    font-weight: 200;
-
-}
-
-#dateTime {
-    font-family: 'roboto';
-    font-size: 25px;
-    font-weight: 300;
-    color: white;
-    text-align: center;
-}
-
-.subContainer {
-    margin-bottom: 50px;
-    margin-left: 35px;
-    margin-right: 35px;
+.extraInfo{
     font-family: 'roboto';
     font-weight: 400;
+    font-size: 16px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 1.5em;
-    transition: 0.5s;
     color: white;
+    margin-bottom: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 25px;
 }
 
-.otherInfoLeft {
+.leftInfo{
     display: flex;
     flex-direction: column;
     text-align: start;
-    margin-right: 5em;
 }
 
-.otherInfoLeft p {
+.leftInfo p{
     margin: 5px;
+    margin-right: 85px;
 }
 
-.otherInfoRight {
+.rightInfo{
     display: flex;
     text-align: end;
     flex-direction: column;
-    margin-left: 5em;
      white-space: nowrap;
   overflow: hidden;
+    
 }
 
-.otherInfoRight p {
+.rightInfo p{
     margin: 5px;
+    margin-left: 85px;
 }
 
-.subContainer:Hover {
-    font-size: 17px;
-    transition: 0.5s;
+@media(max-width: 450px){
+    .outerBox{
+        width: 90%;
+        height: auto;
+    }
+    .pill{
+        color: black;
+        font-size: 60px;
+        font-weight: 200;
+        background-color: #ebebeb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        width: 200px;
+        height: 100px;
+    }
+    .rightInfo p{
+        margin-left: auto;
+    }
 }
-
-#loaderBg{
-    background: rgba(68, 68, 68, 0);
-    background-repeat: repeat;
-    height: 100vh; 
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-#loaderBg .hidden{
-    visibility: hidden;
-}
-
-#loader{
-    height: 50px;
-    width: 50px;
-    border: 5px solid;
-    border-color: white transparent;
-    border-radius: 50%;
-    z-index: 100;
-animation: spin 1.5s linear infinite;
-}
-
