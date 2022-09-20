@@ -14,7 +14,7 @@ width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image:linear-gradient(to bottom right, #222, #666) ;
+    background: radial-gradient(#555, #333) ;
 width: 100vw;
 height: 100vh;
 }
@@ -55,8 +55,11 @@ animation: spin 1s linear infinite;
     border-radius: 20px;
     width: auto;
     height: auto;
+    box-shadow: 0 20px 40px #222;
     visibility: hidden;
+ 
 }
+
 
 
 
@@ -65,9 +68,12 @@ animation: spin 1s linear infinite;
     font-weight: 300;
     color: white;
     text-align: center;
-    margin-top:50px;
-    margin-bottom: 25px;
+    margin-top:40px;
+    margin-bottom: 40px;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 .pill{
@@ -81,6 +87,12 @@ animation: spin 1s linear infinite;
     border-radius: 50px;
     width: 200px;
     height: 100px;
+    transition: .5s;
+}
+
+.pill:hover{
+    box-shadow: 0 0 10px black inset;
+    transition: .5s;
 }
 
 .material-symbols-rounded {
@@ -104,11 +116,13 @@ animation: spin 1s linear infinite;
     flex-direction: row;
     justify-content: center;
     color: white;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     margin-left: 35px;
     margin-right: 35px;
-    margin-top: 25px;
+    margin-top: 40px;
 }
+
+
 
 .leftInfo{
     display: flex;
@@ -135,6 +149,8 @@ animation: spin 1s linear infinite;
     margin-left: 85px;
 }
 
+
+
 @media(max-width: 450px){
     .outerBox{
         width: 90%;
@@ -153,6 +169,18 @@ animation: spin 1s linear infinite;
         height: 100px;
     }
     .rightInfo p{
-        margin-left: auto;
+        margin-left: 65px;
+    }
+    .leftInfo p{
+        margin-right: 65px;
+    }
+}
+
+@media(max-width: 345px){
+    .rightInfo p{
+        margin-left: 35px;
+    }
+    .leftInfo p{
+        margin-right: 35px;
     }
 }
