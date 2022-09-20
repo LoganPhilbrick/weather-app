@@ -84,7 +84,14 @@ const updateIcon = () => {
       break;
     case "Clouds":
       i = "cloudy";
+      break;
+    case "Mist":
+      i = "water";
+      break;
+    default:
+      i = "sunny";
   }
+
   // return and update weatherIcon with new i value
   return (weatherIcon = i);
 };
