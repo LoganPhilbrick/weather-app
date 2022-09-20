@@ -3,20 +3,20 @@ body{
     color: white;
     display: flex;
     margin: 0;
-   
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    background: repeat radial-gradient(#555, #333) ;
 }
 
 .godContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: repeat radial-gradient(#555, #333) ;
-    height: 100%;
-    width: 200%;
+    /* background: repeat radial-gradient(#555, #333) ; */
+    height: 100vh;
+    width: 100vw;
 
 }
 
