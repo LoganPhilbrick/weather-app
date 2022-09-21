@@ -105,7 +105,7 @@ const fetchWeatherData = (APIKEY, lat, long) => {
     .then(() => {
       let convertedTemp = convertKToF(weatherInfo.main.temp);
       temp.innerText = `${parseInt(convertedTemp)}°`;
-      dateAndTime.innerHTML = `${formattedDate}th in ${weatherInfo.name}`;
+      dateAndTime.innerHTML = `${formattedDate} in ${weatherInfo.name}`;
       humidity.innerHTML = `${weatherInfo.main.humidity}%`;
       wind.innerHTML = `${parseInt(weatherInfo.wind.speed)} mph`;
       pressure.innerHTML = `${weatherInfo.main.pressure} mb`;
